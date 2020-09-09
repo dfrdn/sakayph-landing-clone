@@ -1,0 +1,352 @@
+:root {
+  --dark-text-color: #5b5b5b;
+  --light-text-color: white;
+  --primary-color: #6dde5f;
+  --secondary-color: #f8f8f8;
+
+  --max-width-multiplier: 1;
+  --column-number: 1;
+}
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+
+  font-size: 62.5%;
+}
+
+@media (min-width: 386px) {
+  html {
+    font-size: 80%;
+  }
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 85%;
+  }
+
+  :root {
+    --max-width-multiplier: 1.5;
+    --column-number: 2;
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+div {
+  border: solid 1px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "montserrat", sans-serif;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-white {
+  color: var(--light-text-color);
+}
+
+body {
+  font-family: proxima nova, proxima-nova, -apple-system, BlinkMacSystemFont,
+    segoe ui, Roboto, helvetica neue, Arial, sans-serif;
+  color: var(--dark-text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 500;
+  background-color: var(--secondary-color);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1140px;
+}
+
+a {
+  text-decoration: none;
+}
+
+#features:nth-child(odd) {
+  background-color: white;
+}
+
+#menu {
+  height: 5.2rem;
+  background-color: var(--primary-color);
+  margin: 0;
+  padding: 0 1.4rem;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#menu-logo {
+  filter: brightness(100);
+  width: 12rem;
+  height: 4.2rem;
+  margin: 0;
+  padding: 0;
+  background: url(../images/sakay-logo.svg) no-repeat;
+  background-size: contain;
+  color: transparent;
+}
+
+#menu-logo:hover {
+  filter: drop-shadow(0 0 0 1rem var(--dark-text-color));
+}
+
+#menu-list {
+  list-style-type: none;
+}
+
+.menu-item {
+  display: inline-block;
+}
+
+header > menu > a {
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  #menu {
+    background-color: transparent;
+    height: 10rem;
+    padding: 0 6rem;
+  }
+
+  #menu-logo {
+    filter: none;
+  }
+}
+header p {
+  max-width: calc(300px * var(--max-width-multiplier));
+  font-size: 1.8em;
+  line-height: 2.6rem;
+  margin: 2rem auto;
+}
+
+#logo {
+  display: block;
+  margin: 32px auto 0.8em;
+  width: calc(100px * var(--max-width-multiplier));
+}
+
+form {
+  display: flex;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  justify-content: space-between;
+}
+
+.search {
+  border: 0.1rem solid #d2e2d4;
+  height: 6.4rem;
+  outline: 0;
+  border-radius: 0.8rem;
+  background-color: white;
+  margin: 0 1rem;
+  font-size: 1.6rem;
+  max-width: 60rem;
+}
+
+#search-input {
+  width: 16rem;
+  color: var(--dark-text-color);
+  border: 0;
+  margin: 0 2rem;
+  outline: 0;
+  font-weight: 500;
+  border-radius: 0.8rem;
+  font-size: 1.6rem;
+}
+
+.search-btn {
+  width: 40px;
+  height: 40px;
+  background-color: #95d458;
+  cursor: pointer;
+  border-radius: 0.8rem;
+  box-shadow: none;
+  border: none;
+  margin: 0 1.6rem;
+}
+
+.mobile-images {
+  display: flex;
+  justify-content: center;
+  margin: 3rem;
+}
+
+.mobile-image {
+  height: calc(34px * var(--max-width-multiplier));
+  margin: 0.4rem;
+}
+
+@media (min-width: 600px) {
+  .search {
+    margin: 0 auto;
+  }
+}
+
+#intro {
+  /* height: 77rem; */
+  background-color: var(--secondary-color);
+  position: relative;
+}
+
+.container-phone {
+  /* position: relative; */
+  perspective: 90rem;
+  margin: 1.6rem auto 0;
+  padding: 2.4rem 0;
+}
+
+#intro::before {
+  content: "";
+  position: absolute;
+  height: 46rem;
+  width: 100%;
+  bottom: 0;
+  background: #4cd964 url(../images/hero-lines.svg) no-repeat bottom center;
+  background-size: cover;
+}
+
+#tagline {
+  font-size: 2.8rem;
+  line-height: 4.2rem;
+  margin: 0;
+}
+
+#phone {
+  position: relative;
+  margin: 3.6rem auto 2.4rem;
+  width: 20rem;
+  height: 40.6rem;
+  transform-style: preserve-3d;
+  transform: rotateY(-19deg);
+  z-index: 1;
+}
+
+#phone > div,
+#phone::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 2.4rem;
+}
+
+#phone::before {
+  display: block;
+  content: "";
+  transform: translateZ(-2.5rem) scale(1.025);
+  background-color: #e73f51;
+}
+
+#phone .front {
+  box-shadow: inset 0 0.4rem 0.7rem 0.4rem white,
+    inset 0 -0.5rem 2.5rem rgba(173, 173, 173, 0.5),
+    0 2.2rem 10rem -1.5rem rgba(0, 0, 0, 0.4);
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: -1;
+}
+
+#phone .content {
+  background: #dddddd;
+  width: 19.2rem;
+  border: 0.2rem solid #cccccc;
+  border-radius: 0.3rem;
+}
+
+.container-intro h2 {
+  position: relative;
+  max-width: 30rem;
+  font-size: 2.8rem;
+  line-height: 4.2rem;
+  margin: 0 auto;
+}
+
+.container-intro p {
+  position: relative;
+  max-width: 30rem;
+  line-height: 2.6rem;
+  font-size: 1.8rem;
+  margin: 2rem auto;
+}
+
+#testimonials {
+  padding: 6.4rem;
+}
+
+h2 {
+  font-size: 2.8rem;
+  line-height: 4.2rem;
+  margin: 0;
+}
+
+h3 {
+  font-size: 2.2rem;
+  font-weight: 300;
+  line-height: 3.8rem;
+  margin: 0;
+}
+
+footer {
+  background: var(--primary-color);
+  display: flex;
+  justify-content: space-around;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.col-feature,
+.col-feature-img {
+  padding: 5rem;
+  float: left;
+  width: calc(100% / var(--column-number));
+}
+
+#features p {
+  font-size: 2rem;
+  line-height: 3rem;
+}
+
+.illustration {
+  display: block;
+  margin: auto;
+  width: 100%;
+}
+
+footer a,
+footer ul {
+  text-decoration: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#logo-footer {
+  filter: brightness(100);
+  width: 18em;
+}
